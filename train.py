@@ -153,14 +153,14 @@ def plot_training_history(train_losses, train_accs, val_losses, val_accs, save_p
 
 def main():
     # Hyperparameters
-    # num_epochs = 20
-    num_epochs = 1
-    # learning_rate = 0.001
-    learning_rate = 0.01
-    # batch_size = 32
-    batch_size = 6
-    # img_size = 64
-    img_size = 16
+    num_epochs = 20
+    # num_epochs = 1
+    learning_rate = 0.001
+    #learning_rate = 0.01
+    batch_size = 32
+    #batch_size = 6
+    img_size = 64
+    # img_size = 16
     data_root = "data/processed"
     
     # Device
