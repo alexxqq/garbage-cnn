@@ -1,8 +1,7 @@
 # Data directories
-/models/
-
+models/*
+!models/.keep
 # Allow internal folder
-!models/
 
 # Ignore any weights in root
 *.pth
