@@ -1,15 +1,14 @@
 # Data directories
-models/*
-!models/.keep
-# Allow internal folder
-
-# Ignore any weights in root
-*.pth
-*.zip
-data/*  
+/data/
+/data/*
 !data/.keep
-# Model files (anywhere in the project)
-models/
+
+# Model files - root level models/ directory only
+/models/
+/models/*
+!models/.keep
+
+# Model weight files (anywhere in project)
 *.pth
 *.pt
 *.ckpt
@@ -17,8 +16,9 @@ models/
 *.pb
 *.onnx
 *.tflite
-src/models/*.pth
-src/models/*.pt
+
+# Archives
+*.zip
 
 # MLflow
 mlruns/
