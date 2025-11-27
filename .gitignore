@@ -2,7 +2,7 @@
 /data/
 /data/*
 !data/.keep
-
+trash/
 # Model files - root level models/ directory only
 /models/
 /models/*

@@ -109,6 +109,8 @@ class DatasetLoader:
                     dataset_path / cls,
                     dataset_path / "dataset-resized" / cls,
                     dataset_path / "garbage-classification" / cls,
+                    dataset_path / "Garbage classification" / cls,
+                    dataset_path / "Garbage classification" / "Garbage classification" / cls,
                 ]
                 
                 cls_path = None
