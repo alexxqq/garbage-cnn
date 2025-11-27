@@ -1,7 +1,14 @@
 # Data directories
-data/
-*.zip
+/models/
 
+# Allow internal folder
+!models/
+
+# Ignore any weights in root
+*.pth
+*.zip
+data/*  
+!data/.keep
 # Model files (anywhere in the project)
 models/
 *.pth

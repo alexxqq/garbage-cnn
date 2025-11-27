@@ -4,10 +4,13 @@ Production Training Script
 Trains garbage classification model with MLflow tracking
 """
 import sys
+import os
 from pathlib import Path
 
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent))
+# Add project root to Python path
+project_root = Path(__file__).parent.absolute()
+sys.path.insert(0, str(project_root))
+os.chdir(project_root)  # Change to project root directory
 
 import torch
 from torch.utils.data import DataLoader

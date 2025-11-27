@@ -4,9 +4,13 @@ Model Evaluation Script
 Evaluates trained model and generates comprehensive metrics
 """
 import sys
+import os
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+# Add project root to Python path
+project_root = Path(__file__).parent.absolute()
+sys.path.insert(0, str(project_root))
+os.chdir(project_root)  # Change to project root directory
 
 import torch
 from torch.utils.data import DataLoader
