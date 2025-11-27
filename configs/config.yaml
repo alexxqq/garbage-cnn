@@ -1,0 +1,97 @@
+# Project Configuration
+project:
+  name: "garbage-classification"
+  version: "1.0.0"
+
+# Data Configuration
+data:
+  root: "data"
+  processed_dir: "data/processed"
+  raw_dir: "data/raw"
+  
+  # Dataset sources
+  datasets:
+    trashnet:
+      enabled: true
+      source: "github"
+      url: "https://github.com/garythung/trashnet/raw/master/data/dataset-resized.zip"
+    
+    kaggle:
+      enabled: true
+      dataset_id: "asdasdasasdas/garbage-classification"
+      cache_dir: "~/.cache/kagglehub"
+  
+  # Data splits
+  splits:
+    train: 0.7
+    val: 0.15
+    test: 0.15
+    random_seed: 42
+
+# Model Configuration
+model:
+  architecture: "resnet50"  # resnet18, resnet50, resnet101
+  num_classes: 6
+  pretrained: true
+  weights: "IMAGENET1K_V2"
+  
+  classes:
+    - "cardboard"
+    - "glass"
+    - "metal"
+    - "paper"
+    - "plastic"
+    - "trash"
+
+# Training Configuration
+training:
+  image_size: 224
+  batch_size: 32
+  epochs: 20
+  learning_rate: 0.001
+  optimizer: "adam"
+  scheduler:
+    type: "StepLR"
+    step_size: 5
+    gamma: 0.5
+  
+  # Data augmentation
+  augmentation:
+    horizontal_flip: 0.5
+    rotation: 10
+    color_jitter: 0.1
+  
+  # Device
+  device: "auto"  # auto, cpu, cuda
+  
+  # Checkpointing
+  save_dir: "models"
+  save_best: true
+  save_frequency: 5  # Save every N epochs
+
+# MLflow Configuration
+mlflow:
+  enabled: true
+  tracking_uri: "file:./mlruns"
+  experiment_name: "garbage-classification"
+  log_artifacts: true
+  log_model: true
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  model_path: "models/best_resnet50.pth"
+
+# UI Configuration
+ui:
+  port: 8501
+  model_path: "models/best_resnet50.pth"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/training.log"
+

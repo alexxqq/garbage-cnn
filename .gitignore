@@ -2,9 +2,25 @@
 data/
 *.zip
 
-# Model files
+# Model files (anywhere in the project)
 models/
 *.pth
+*.pt
+*.ckpt
+*.h5
+*.pb
+*.onnx
+*.tflite
+src/models/*.pth
+src/models/*.pt
+
+# MLflow
+mlruns/
+.mlflow/
+
+# Logs
+logs/
+*.log
 
 # Python
 __pycache__/
